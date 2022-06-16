@@ -1,0 +1,62 @@
+
+.tetris-shape {
+  margin-bottom: 10px;
+}
+
+.tetris-shape .x-form-radio {
+  display: none;
+}
+
+.tetris-shape label:before {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #efefef;
+  display: block;
+  margin-bottom: 2px;
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+}
+
+.tetris-shape.x-form-cb-checked label:before {
+  background-color: #74C2F1;
+  border-color: #006CAE;
+}
+
+.tetris-shape--i1 label:before {
+  background-image: url(get-resource-path("img/tetris-i1.svg"));
+}
+
+.tetris-shape--i2 label:before {
+  background-image: url(get-resource-path("img/tetris-i2.svg"));
+}
+
+.tetris-shape--j label:before {
+  background-image: url(get-resource-path("img/tetris-j.svg"));
+}
+
+.tetris-shape--l label:before {
+  background-image: url(get-resource-path("img/tetris-l.svg"));
+}
+
+.tetris-shape--o label:before {
+  background-image: url(get-resource-path("img/tetris-o.svg"));
+}
+
+.tetris-shape--s label:before {
+  background-image: url(get-resource-path("img/tetris-s.svg"));
+}
+
+.tetris-shape--t1 label:before {
+  background-image: url(get-resource-path("img/tetris-t1.svg"));
+}
+
+.tetris-shape--t2 label:before {
+  background-image: url(get-resource-path("img/tetris-t2.svg"));
+}
+
+.tetris-shape--z label:before {
+  background-image: url(get-resource-path("img/tetris-z.svg"));
+}

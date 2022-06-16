@@ -1,0 +1,3 @@
+packages:
+  - "apps/main/viewtype-configuration-studio-base"
+  - "apps/main/viewtype-configuration-studio-plugin"
