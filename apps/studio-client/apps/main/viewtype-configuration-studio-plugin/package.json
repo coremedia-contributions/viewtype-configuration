@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@coremedia-blueprint/studio-client.main.blueprint-forms": "1.0.0-SNAPSHOT",
+    "@coremedia-labs/studio-client.ext.color-picker-studio-client": "1.0.0-SNAPSHOT",
     "@coremedia-labs/studio-client.ext.viewtype-configuration-studio-client": "1.0.0-SNAPSHOT",
     "@coremedia/studio-client.cap-base-models": "2204.1.0",
     "@coremedia/studio-client.cap-rest-client": "2204.1.0",

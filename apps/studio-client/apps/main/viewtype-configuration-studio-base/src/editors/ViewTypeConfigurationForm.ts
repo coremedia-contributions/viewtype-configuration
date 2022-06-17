@@ -26,6 +26,8 @@ class ViewTypeConfigurationForm extends PropertyFieldGroup {
     this.appliesTo = config.appliesTo;
   }
 
+  public static VT_BASE_PATH = "viewtypeConfiguration";
+
   protected override afterRender() {
     super.afterRender();
 

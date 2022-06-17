@@ -1,3 +1,5 @@
+import ColorPickerPropertyField
+  from "@coremedia-labs/studio-client.ext.color-picker-studio-client/components/ColorPickerPropertyField";
 import ViewTypeConfigurationForm
   from "@coremedia-labs/studio-client.ext.viewtype-configuration-studio-client/editors/ViewTypeConfigurationForm";
 import AdvancedFieldContainer from "@coremedia/studio-client.ext.ui-components/components/AdvancedFieldContainer";
@@ -27,7 +29,7 @@ class StoriesSliderOptionsForm extends ViewTypeConfigurationForm {
               labelSeparator: "",
               labelAlign: "top",
               bindTo: config.bindTo,
-              propertyName: "localSettings.itemsToShowOnDesktop",
+              propertyName: "localSettings." + ViewTypeConfigurationForm.VT_BASE_PATH + ".itemsToShowOnDesktop",
               flex: 1,
             }),
             Config(Spacer, { width: 20 }),
@@ -35,7 +37,7 @@ class StoriesSliderOptionsForm extends ViewTypeConfigurationForm {
               labelSeparator: "",
               labelAlign: "top",
               bindTo: config.bindTo,
-              propertyName: "localSettings.itemsToShowOnMobile",
+              propertyName: "localSettings." + ViewTypeConfigurationForm.VT_BASE_PATH + ".itemsToShowOnMobile",
               flex: 1,
             }),
           ],
@@ -44,11 +46,11 @@ class StoriesSliderOptionsForm extends ViewTypeConfigurationForm {
 
         Config(Spacer, { height: 5 }),
 
-        // Config(ColorPickerPropertyField, {
-        //   propertyName: "localSettings.containerBackgroundColor",
-        //   initialColor: "#ffffff",
-        // }),
-        // Config(ColorPickerPropertyField, { propertyName: "localSettings.textColor" }),
+        Config(ColorPickerPropertyField, {
+          propertyName: "localSettings." + ViewTypeConfigurationForm.VT_BASE_PATH + ".containerBackgroundColor",
+          initialColor: "#ffffff",
+        }),
+        Config(ColorPickerPropertyField, { propertyName: "localSettings." + ViewTypeConfigurationForm.VT_BASE_PATH + ".textColor" }),
       ],
     }), config));
   }

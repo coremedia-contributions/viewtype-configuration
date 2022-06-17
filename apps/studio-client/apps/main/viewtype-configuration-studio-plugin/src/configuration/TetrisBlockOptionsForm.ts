@@ -8,6 +8,7 @@ import BindDisablePlugin
   from "@coremedia/studio-client.main.editor-components/sdk/premular/fields/plugins/BindDisablePlugin";
 import Config from "@jangaroo/runtime/Config";
 import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
+import ViewTypeConfiguration_properties from "../ViewTypeConfiguration_properties";
 
 interface TetrisBlockOptionsFormConfig extends Config<ViewTypeConfigurationForm> {}
 
@@ -25,7 +26,7 @@ class TetrisBlockOptionsForm extends ViewTypeConfigurationForm {
           hideLabel: false,
           flex: 1,
           itemId: "blockShapeOptions",
-          bindTo: config.bindTo.extendBy(ContentPropertyNames.PROPERTIES, "localSettings", "tetrisShape"),
+          bindTo: config.bindTo.extendBy(ContentPropertyNames.PROPERTIES, "localSettings", ViewTypeConfigurationForm.VT_BASE_PATH, "tetrisShape"),
           columns: 3,
           ...ConfigUtils.append({
             plugins: [
@@ -38,48 +39,48 @@ class TetrisBlockOptionsForm extends ViewTypeConfigurationForm {
           items: [
             Config(StatefulRadio, {
               inputValue: "i1",
-              boxLabel: "Shape I (left)",
+              boxLabel: ViewTypeConfiguration_properties.TetrisBlock_i1,
               cls: "tetris-shape tetris-shape--i1",
             }),
             Config(StatefulRadio, {
               inputValue: "i2",
-              boxLabel: "Shape I (right)",
+              boxLabel: ViewTypeConfiguration_properties.TetrisBlock_i2,
               cls: "tetris-shape tetris-shape--i2",
             }),
             Config(StatefulRadio, {
               inputValue: "j",
-              boxLabel: "Shape J",
+              boxLabel: ViewTypeConfiguration_properties.TetrisBlock_j,
               cls: "tetris-shape tetris-shape--j",
             }),
             Config(StatefulRadio, {
               inputValue: "l",
-              boxLabel: "Shape L",
+              boxLabel: ViewTypeConfiguration_properties.TetrisBlock_l,
               cls: "tetris-shape tetris-shape--l",
             }),
             Config(StatefulRadio, {
               inputValue: "o",
-              boxLabel: "Shape O",
+              boxLabel: ViewTypeConfiguration_properties.TetrisBlock_o,
               cls: "tetris-shape tetris-shape--o",
               checked: true,
             }),
             Config(StatefulRadio, {
               inputValue: "s",
-              boxLabel: "Shape S",
+              boxLabel: ViewTypeConfiguration_properties.TetrisBlock_s,
               cls: "tetris-shape tetris-shape--s",
             }),
             Config(StatefulRadio, {
               inputValue: "t1",
-              boxLabel: "Shape T (left)",
+              boxLabel: ViewTypeConfiguration_properties.TetrisBlock_t1,
               cls: "tetris-shape tetris-shape--t1",
             }),
             Config(StatefulRadio, {
               inputValue: "t2",
-              boxLabel: "Shape T (right)",
+              boxLabel: ViewTypeConfiguration_properties.TetrisBlock_t2,
               cls: "tetris-shape tetris-shape--t2",
             }),
             Config(StatefulRadio, {
               inputValue: "z",
-              boxLabel: "Shape Z",
+              boxLabel: ViewTypeConfiguration_properties.TetrisBlock_z,
               cls: "tetris-shape tetris-shape--z",
             }),
           ],

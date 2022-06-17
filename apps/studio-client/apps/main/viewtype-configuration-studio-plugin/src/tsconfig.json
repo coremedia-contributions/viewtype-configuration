@@ -15,6 +15,9 @@
       "@coremedia-blueprint/studio-client.main.salesdemo-feature-modifier/*": [
         "../../../../../../../../../apps/studio-client/apps/main/salesdemo-feature-modifier/src/*"
       ],
+      "@coremedia-labs/studio-client.ext.color-picker-studio-client/*": [
+        "../../../../../../../color-picker/apps/studio-client/apps/main/color-picker-studio-base/src/*"
+      ],
       "@coremedia-labs/studio-client.ext.viewtype-configuration-studio-client/*": [
         "../../viewtype-configuration-studio-base/src/*"
       ],
@@ -219,6 +222,9 @@
   "references": [
     {
       "path": "../../../../../../../../../apps/studio-client/apps/main/blueprint-forms/src"
+    },
+    {
+      "path": "../../../../../../../color-picker/apps/studio-client/apps/main/color-picker-studio-base/src"
     },
     {
       "path": "../../viewtype-configuration-studio-base/src"
