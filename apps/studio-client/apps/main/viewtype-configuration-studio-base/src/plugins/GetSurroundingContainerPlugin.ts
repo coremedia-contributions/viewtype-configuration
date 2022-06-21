@@ -7,6 +7,7 @@ import PlacementLinkListPropertyField
 import { cast } from "@jangaroo/runtime";
 import Config from "@jangaroo/runtime/Config";
 import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
+import ViewTypeConfigurationForm from "../editors/ViewTypeConfigurationForm";
 import AddAdditionalConfigItemsPlugin from "./AddAdditionalConfigItemsPlugin";
 
 interface GetSurroundingContainerPluginConfig extends Config<NestedRulesPlugin>, Partial<Pick<GetSurroundingContainerPlugin,
@@ -35,7 +36,7 @@ class GetSurroundingContainerPlugin extends NestedRulesPlugin {
     }), config));
   }
 
-  items: Array<any> = null;
+  items: Array<Config<ViewTypeConfigurationForm>> = null;
 }
 
 export default GetSurroundingContainerPlugin;

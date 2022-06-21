@@ -1,6 +1,9 @@
 import ViewTypeSelectorForm
   from "@coremedia-blueprint/studio-client.main.blueprint-forms/forms/containers/ViewTypeSelectorForm";
-import GetSurroundingContainerPlugin from "@coremedia-labs/studio-client.ext.viewtype-configuration-studio-client/plugins/GetSurroundingContainerPlugin";
+import ViewTypeConfigurationForm
+  from "@coremedia-labs/studio-client.ext.viewtype-configuration-studio-client/editors/ViewTypeConfigurationForm";
+import GetSurroundingContainerPlugin
+  from "@coremedia-labs/studio-client.ext.viewtype-configuration-studio-client/plugins/GetSurroundingContainerPlugin";
 import ContentTypes_properties from "@coremedia/studio-client.cap-base-models/content/ContentTypes_properties";
 import AddItemsPlugin from "@coremedia/studio-client.ext.ui-components/plugins/AddItemsPlugin";
 
@@ -25,27 +28,21 @@ class ViewTypeConfigurationStudioPlugin extends StudioPlugin {
 
   constructor(config: Config<ViewTypeConfigurationStudioPlugin> = null) {
     super((() => {
+      const items: Array<Config<ViewTypeConfigurationForm>> = [
+        Config(StoriesSliderOptionsForm, { appliesTo: ["stories-slider"] }),
+        Config(TetrisBlockOptionsForm, { appliesTo: ["tetris"] }),
+      ];
       return ConfigUtils.apply(Config(ViewTypeConfigurationStudioPlugin, {
 
         rules: [
           Config(ViewTypeSelectorForm, {
             plugins: [
-              Config(AddItemsPlugin, {
-                items: [
-                  Config(StoriesSliderOptionsForm),
-                  Config(TetrisBlockOptionsForm),
-                ],
-              }),
+              Config(AddItemsPlugin, { items: items }),
             ],
           }),
           Config(PageGridPropertyField, {
             plugins: [
-              Config(GetSurroundingContainerPlugin, {
-                items: [
-                  Config(StoriesSliderOptionsForm),
-                  Config(TetrisBlockOptionsForm),
-                ],
-              }),
+              Config(GetSurroundingContainerPlugin, { items: items }),
             ],
           }),
         ],

@@ -19,7 +19,6 @@ class TetrisBlockOptionsForm extends ViewTypeConfigurationForm {
   constructor(config: Config<TetrisBlockOptionsForm> = null) {
     super(ConfigUtils.apply(Config(TetrisBlockOptionsForm, {
       itemId: "tetrisBlockViewtypeOptions",
-      appliesTo: ["tetris"],
       items: [
         Config(BoundRadioGroup, {
           fieldLabel: "Block Shape",

@@ -19,7 +19,6 @@ class StoriesSliderOptionsForm extends ViewTypeConfigurationForm {
   constructor(config: Config<StoriesSliderOptionsForm> = null) {
     super(ConfigUtils.apply(Config(StoriesSliderOptionsForm, {
       itemId: "storiesSliderViewtypeOptions",
-      appliesTo: ["stories-slider"],
       items: [
         Config(AdvancedFieldContainer, {
           labelSeparator: "",

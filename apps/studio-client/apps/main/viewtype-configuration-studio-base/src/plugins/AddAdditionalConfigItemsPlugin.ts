@@ -12,6 +12,7 @@ import Separator from "@jangaroo/ext-ts/toolbar/Separator";
 import { cast } from "@jangaroo/runtime";
 import Config from "@jangaroo/runtime/Config";
 import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
+import ViewTypeConfigurationForm from "../editors/ViewTypeConfigurationForm";
 import ExtendedToolbarDesignIconButton from "./ExtendedToolbarDesignIconButton";
 
 interface AddAdditionalConfigItemsPluginConfig extends Config<AddItemsPlugin>, Partial<Pick<AddAdditionalConfigItemsPlugin,
@@ -44,7 +45,7 @@ class AddAdditionalConfigItemsPlugin extends AddItemsPlugin {
 
   bindTo: ValueExpression = null;
 
-  viewtypeConfigurationItems: Array<any> = null;
+  viewtypeConfigurationItems: Array<Config<ViewTypeConfigurationForm>> = null;
 
 }
 
