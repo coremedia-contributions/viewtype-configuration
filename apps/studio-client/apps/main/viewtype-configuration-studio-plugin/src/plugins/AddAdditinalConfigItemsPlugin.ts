@@ -15,8 +15,7 @@ import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
 import ExtendedToolbarDesignIconButton from "../components/ExtendedToolbarDesignIconButton";
 
 interface AddAdditinalConfigItemsPluginConfig extends Config<AddItemsPlugin>, Partial<Pick<AddAdditinalConfigItemsPlugin,
-        "bindTo" |
-        "propertyName"
+        "bindTo"
         >> {
 }
 
@@ -43,7 +42,6 @@ class AddAdditinalConfigItemsPlugin extends AddItemsPlugin {
 
   bindTo: ValueExpression = null;
 
-  propertyName: string = null;
 }
 
 export default AddAdditinalConfigItemsPlugin;

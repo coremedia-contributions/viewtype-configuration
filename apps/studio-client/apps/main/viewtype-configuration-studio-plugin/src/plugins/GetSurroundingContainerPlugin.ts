@@ -25,7 +25,6 @@ class GetSurroundingContainerPlugin extends NestedRulesPlugin {
             Config(AddAdditinalConfigItemsPlugin, {
               recursive: true,
               bindTo: componentConfig.bindTo,
-              propertyName: "localSettings",
             }),
           ],
         }),
