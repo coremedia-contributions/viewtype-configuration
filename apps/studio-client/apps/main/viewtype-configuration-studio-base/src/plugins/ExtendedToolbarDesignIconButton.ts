@@ -1,17 +1,15 @@
-import ViewTypeConfiguration_properties
-  from "@coremedia-labs/studio-client.ext.viewtype-configuration-studio-client/ViewTypeConfiguration_properties";
 import ValueExpression from "@coremedia/studio-client.client-core/data/ValueExpression";
 import IconButton from "@coremedia/studio-client.ext.ui-components/components/IconButton";
 import Menu from "@jangaroo/ext-ts/menu/Menu";
 import Config from "@jangaroo/runtime/Config";
 import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
 import resourceManager from "@jangaroo/runtime/l10n/resourceManager";
-import StoriesSliderOptionsForm from "../configuration/StoriesSliderOptionsForm";
-import TetrisBlockOptionsForm from "../configuration/TetrisBlockOptionsForm";
+import ViewTypeConfiguration_properties from "../ViewTypeConfiguration_properties";
 
 interface ExtendedToolbarDesignIconButtonConfig extends Config<IconButton>, Partial<Pick<ExtendedToolbarDesignIconButton,
         "bindTo" |
         "sectionName" |
+        "items" |
         "viewtypeVE"
         >> {
 }
@@ -27,10 +25,7 @@ class ExtendedToolbarDesignIconButton extends IconButton {
       tooltip: ViewTypeConfiguration_properties.ViewTypeConfigurationTooltip,
       text: ViewTypeConfiguration_properties.ViewTypeConfigurationTitle,
       menu: Config(Menu, {
-        items: [
-          Config(StoriesSliderOptionsForm),
-          Config(TetrisBlockOptionsForm),
-        ],
+        items: config.items,
         defaults: {
           bindTo: config.bindTo,
           viewtypeVE: config.viewtypeVE,
@@ -46,6 +41,8 @@ class ExtendedToolbarDesignIconButton extends IconButton {
   viewtypeVE: ValueExpression = null;
 
   sectionName: string = null;
+
+  items: Array<any> = null;
 
 }
 

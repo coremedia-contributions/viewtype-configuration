@@ -7,9 +7,11 @@ import PlacementLinkListPropertyField
 import { cast } from "@jangaroo/runtime";
 import Config from "@jangaroo/runtime/Config";
 import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
-import AddAdditinalConfigItemsPlugin from "./AddAdditinalConfigItemsPlugin";
+import AddAdditionalConfigItemsPlugin from "./AddAdditionalConfigItemsPlugin";
 
-interface GetSurroundingContainerPluginConfig extends Config<NestedRulesPlugin> {
+interface GetSurroundingContainerPluginConfig extends Config<NestedRulesPlugin>, Partial<Pick<GetSurroundingContainerPlugin,
+        "items"
+        >> {
 }
 
 class GetSurroundingContainerPlugin extends NestedRulesPlugin {
@@ -22,15 +24,18 @@ class GetSurroundingContainerPlugin extends NestedRulesPlugin {
       rules: [
         Config(PlacementLinkListPropertyField, {
           plugins: [
-            Config(AddAdditinalConfigItemsPlugin, {
+            Config(AddAdditionalConfigItemsPlugin, {
               recursive: true,
               bindTo: componentConfig.bindTo,
+              viewtypeConfigurationItems: config.items,
             }),
           ],
         }),
       ],
     }), config));
   }
+
+  items: Array<any> = null;
 }
 
 export default GetSurroundingContainerPlugin;

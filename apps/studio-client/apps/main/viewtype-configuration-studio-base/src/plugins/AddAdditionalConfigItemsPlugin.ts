@@ -12,25 +12,27 @@ import Separator from "@jangaroo/ext-ts/toolbar/Separator";
 import { cast } from "@jangaroo/runtime";
 import Config from "@jangaroo/runtime/Config";
 import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
-import ExtendedToolbarDesignIconButton from "../components/ExtendedToolbarDesignIconButton";
+import ExtendedToolbarDesignIconButton from "./ExtendedToolbarDesignIconButton";
 
-interface AddAdditinalConfigItemsPluginConfig extends Config<AddItemsPlugin>, Partial<Pick<AddAdditinalConfigItemsPlugin,
-        "bindTo"
+interface AddAdditionalConfigItemsPluginConfig extends Config<AddItemsPlugin>, Partial<Pick<AddAdditionalConfigItemsPlugin,
+        "bindTo" |
+        "viewtypeConfigurationItems"
         >> {
 }
 
-class AddAdditinalConfigItemsPlugin extends AddItemsPlugin {
-  declare Config: AddAdditinalConfigItemsPluginConfig;
+class AddAdditionalConfigItemsPlugin extends AddItemsPlugin {
+  declare Config: AddAdditionalConfigItemsPluginConfig;
 
-  constructor(config: Config<AddAdditinalConfigItemsPlugin> = null) {
+  constructor(config: Config<AddAdditionalConfigItemsPlugin> = null) {
     const componentConfig: PlacementLinkListPropertyField = cast(PlacementLinkListPropertyField, config.cmp);
-    super(ConfigUtils.apply(Config(AddAdditinalConfigItemsPlugin, {
+    super(ConfigUtils.apply(Config(AddAdditionalConfigItemsPlugin, {
       items: [
         Config(Separator),
         Config(ExtendedToolbarDesignIconButton, {
           bindTo: config.bindTo,
           sectionName: componentConfig.section.getName(),
           viewtypeVE: LinkListUtil.createLinkValueExpression(config.bindTo, [PageGridUtil.getPlacementPropertyPath("placement", componentConfig.section), PageGridConstants.VIEWTYPE_PROPERTY_NAME].join("."), "CMViewtype"),
+          items: config.viewtypeConfigurationItems,
         }),
       ],
       after: [
@@ -42,6 +44,8 @@ class AddAdditinalConfigItemsPlugin extends AddItemsPlugin {
 
   bindTo: ValueExpression = null;
 
+  viewtypeConfigurationItems: Array<any> = null;
+
 }
 
-export default AddAdditinalConfigItemsPlugin;
+export default AddAdditionalConfigItemsPlugin;

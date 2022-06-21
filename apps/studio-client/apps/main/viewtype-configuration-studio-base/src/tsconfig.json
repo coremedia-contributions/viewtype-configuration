@@ -135,6 +135,9 @@
       "@coremedia/studio-client.link-list-models/*": [
         "../node_modules/@coremedia/studio-client.link-list-models/src/*"
       ],
+      "@coremedia/studio-client.main.bpbase-pagegrid-studio-plugin/*": [
+        "../node_modules/@coremedia/studio-client.main.bpbase-pagegrid-studio-plugin/src/*"
+      ],
       "@coremedia/studio-client.main.bpbase-studio-components/*": [
         "../node_modules/@coremedia/studio-client.main.bpbase-studio-components/src/*"
       ],
