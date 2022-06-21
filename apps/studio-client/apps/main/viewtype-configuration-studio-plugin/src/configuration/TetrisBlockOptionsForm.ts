@@ -19,14 +19,13 @@ class TetrisBlockOptionsForm extends ViewTypeConfigurationForm {
   constructor(config: Config<TetrisBlockOptionsForm> = null) {
     super(ConfigUtils.apply(Config(TetrisBlockOptionsForm, {
       itemId: "tetrisBlockViewtypeOptions",
-      appliesTo: ["tetris"],
       items: [
         Config(BoundRadioGroup, {
           fieldLabel: "Block Shape",
           hideLabel: false,
           flex: 1,
           itemId: "blockShapeOptions",
-          bindTo: config.bindTo.extendBy(ContentPropertyNames.PROPERTIES, "localSettings", ViewTypeConfigurationForm.VT_BASE_PATH, "tetrisShape"),
+          bindTo: config.bindTo.extendBy(ContentPropertyNames.PROPERTIES).extendBy(ViewTypeConfigurationForm.calculatePath("tetrisShape", config.pathSuffix)),
           columns: 3,
           ...ConfigUtils.append({
             plugins: [

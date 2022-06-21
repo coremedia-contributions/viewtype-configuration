@@ -8,7 +8,9 @@ import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
 import ViewTypeConfiguration_properties from "../ViewTypeConfiguration_properties";
 
 interface ViewTypeConfigurationFormConfig extends Config<PropertyFieldGroup>, Partial<Pick<ViewTypeConfigurationForm,
-  "appliesTo"
+        "appliesTo" |
+        "pathSuffix" |
+        "viewtypeVE"
 >> {}
 
 class ViewTypeConfigurationForm extends PropertyFieldGroup {
@@ -26,12 +28,16 @@ class ViewTypeConfigurationForm extends PropertyFieldGroup {
     this.appliesTo = config.appliesTo;
   }
 
-  public static VT_BASE_PATH = "viewtypeConfiguration";
+  private static DEFAULT_PATH: Array<string> = ["localSettings", "viewtypeConfiguration"];
+
+  public static calculatePath = (value: string, prefix?: string): Array<string> =>{
+    return prefix ? ViewTypeConfigurationForm.DEFAULT_PATH.concat(prefix, value) : ViewTypeConfigurationForm.DEFAULT_PATH.concat(value);
+  };
 
   protected override afterRender() {
     super.afterRender();
 
-    this.selectedViewTypeExpression = this.bindTo.extendBy(ContentPropertyNames.PROPERTIES, "viewtype", "0");
+    this.selectedViewTypeExpression = this.viewtypeVE || this.bindTo.extendBy(ContentPropertyNames.PROPERTIES, "viewtype", "0");
     this.selectedViewTypeExpression.addChangeListener(bind(this, this.#handleViewTypeChange));
 
     // Initial load
@@ -42,6 +48,10 @@ class ViewTypeConfigurationForm extends PropertyFieldGroup {
   appliesTo: Array<String> = [];
 
   selectedViewTypeExpression: ValueExpression;
+
+  viewtypeVE: ValueExpression = null;
+
+  pathSuffix: string = null;
 
   #handleViewTypeChange() {
     const selectedViewType = this.selectedViewTypeExpression.getValue();

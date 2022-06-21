@@ -19,7 +19,6 @@ class StoriesSliderOptionsForm extends ViewTypeConfigurationForm {
   constructor(config: Config<StoriesSliderOptionsForm> = null) {
     super(ConfigUtils.apply(Config(StoriesSliderOptionsForm, {
       itemId: "storiesSliderViewtypeOptions",
-      appliesTo: ["stories-slider"],
       items: [
         Config(AdvancedFieldContainer, {
           labelSeparator: "",
@@ -29,7 +28,7 @@ class StoriesSliderOptionsForm extends ViewTypeConfigurationForm {
               labelSeparator: "",
               labelAlign: "top",
               bindTo: config.bindTo,
-              propertyName: "localSettings." + ViewTypeConfigurationForm.VT_BASE_PATH + ".itemsToShowOnDesktop",
+              propertyName: ViewTypeConfigurationForm.calculatePath("itemsToShowOnDesktop", config.pathSuffix).join("."),
               flex: 1,
             }),
             Config(Spacer, { width: 20 }),
@@ -37,7 +36,7 @@ class StoriesSliderOptionsForm extends ViewTypeConfigurationForm {
               labelSeparator: "",
               labelAlign: "top",
               bindTo: config.bindTo,
-              propertyName: "localSettings." + ViewTypeConfigurationForm.VT_BASE_PATH + ".itemsToShowOnMobile",
+              propertyName: ViewTypeConfigurationForm.calculatePath("itemsToShowOnMobile", config.pathSuffix).join("."),
               flex: 1,
             }),
           ],
@@ -47,10 +46,10 @@ class StoriesSliderOptionsForm extends ViewTypeConfigurationForm {
         Config(Spacer, { height: 5 }),
 
         Config(ColorPickerPropertyField, {
-          propertyName: "localSettings." + ViewTypeConfigurationForm.VT_BASE_PATH + ".containerBackgroundColor",
+          propertyName: ViewTypeConfigurationForm.calculatePath("containerBackgroundColor", config.pathSuffix).join("."),
           initialColor: "#ffffff",
         }),
-        Config(ColorPickerPropertyField, { propertyName: "localSettings." + ViewTypeConfigurationForm.VT_BASE_PATH + ".textColor" }),
+        Config(ColorPickerPropertyField, { propertyName: ViewTypeConfigurationForm.calculatePath("textColor", config.pathSuffix).join(".") }),
       ],
     }), config));
   }
