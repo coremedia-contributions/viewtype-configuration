@@ -1,6 +1,7 @@
+import ViewTypeConfiguration_properties
+  from "@coremedia-labs/studio-client.ext.viewtype-configuration-studio-client/ViewTypeConfiguration_properties";
 import ValueExpression from "@coremedia/studio-client.client-core/data/ValueExpression";
 import IconButton from "@coremedia/studio-client.ext.ui-components/components/IconButton";
-import DisplayField from "@jangaroo/ext-ts/form/field/Display";
 import Menu from "@jangaroo/ext-ts/menu/Menu";
 import Config from "@jangaroo/runtime/Config";
 import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
@@ -23,11 +24,10 @@ class ExtendedToolbarDesignIconButton extends IconButton {
   constructor(config: Config<ExtendedToolbarDesignIconButton> = null) {
     super((ConfigUtils.apply(Config(ExtendedToolbarDesignIconButton, {
       iconCls: resourceManager.getString("com.coremedia.icons.CoreIcons", "create_rule"),
-      tooltip: "Set additional stuff",
-      text: "Stuff",
+      tooltip: ViewTypeConfiguration_properties.ViewTypeConfigurationTooltip,
+      text: ViewTypeConfiguration_properties.ViewTypeConfigurationTitle,
       menu: Config(Menu, {
         items: [
-          Config(DisplayField, { value: config.viewtypeVE.getValue() }),
           Config(StoriesSliderOptionsForm),
           Config(TetrisBlockOptionsForm),
         ],

@@ -4,18 +4,18 @@
  * @see ViewTypeConfiguration_properties#INSTANCE
  */
 interface ViewTypeConfiguration_properties {
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnDesktop_text": string;
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnDesktop_toolTip": string;
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnDesktop_emptyText": string;
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnMobile_text": string;
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnMobile_toolTip": string;
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnMobile_emptyText": string;
-  "CMCollection_localSettings.viewtypeConfiguration.containerBackgroundColor_text": string;
-  "CMCollection_localSettings.viewtypeConfiguration.containerBackgroundColor_toolTip": string;
-  "CMCollection_localSettings.viewtypeConfiguration.containerBackgroundColor_emptyText": string;
-  "CMCollection_localSettings.viewtypeConfiguration.textColor_text": string;
-  "CMCollection_localSettings.viewtypeConfiguration.textColor_toolTip": string;
-  "CMCollection_localSettings.viewtypeConfiguration.textColor_emptyText": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnDesktop_text": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnDesktop_toolTip": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnDesktop_emptyText": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnMobile_text": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnMobile_toolTip": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnMobile_emptyText": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.containerBackgroundColor_text": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.containerBackgroundColor_toolTip": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.containerBackgroundColor_emptyText": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.textColor_text": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.textColor_toolTip": string;
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.textColor_emptyText": string;
 
   TetrisBlock_i1: string
   TetrisBlock_i2: string
@@ -33,18 +33,18 @@ interface ViewTypeConfiguration_properties {
  * @see ViewTypeConfiguration_properties
  */
 const ViewTypeConfiguration_properties: ViewTypeConfiguration_properties = {
-  "CMCollection_localSettings.viewtypeConfiguration.containerBackgroundColor_text": "Container Background Color",
-  "CMCollection_localSettings.viewtypeConfiguration.containerBackgroundColor_toolTip": "Container Background Color",
-  "CMCollection_localSettings.viewtypeConfiguration.containerBackgroundColor_emptyText": "Enter the container background color here.",
-  "CMCollection_localSettings.viewtypeConfiguration.textColor_text": "Text Color",
-  "CMCollection_localSettings.viewtypeConfiguration.textColor_toolTip": "Text Color",
-  "CMCollection_localSettings.viewtypeConfiguration.textColor_emptyText": "Enter the text color here.",
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnDesktop_text": "Items (Desktop)",
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnDesktop_toolTip": "Number of items to show on Desktop",
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnDesktop_emptyText": "8",
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnMobile_text": "Items (Mobile)",
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnMobile_toolTip": "Number of items to show on Mobile",
-  "CMCollection_localSettings.viewtypeConfiguration.itemsToShowOnMobile_emptyText": "4",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.containerBackgroundColor_text": "Container Background Color",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.containerBackgroundColor_toolTip": "Container Background Color",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.containerBackgroundColor_emptyText": "Enter the container background color here.",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.textColor_text": "Text Color",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.textColor_toolTip": "Text Color",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.textColor_emptyText": "Enter the text color here.",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnDesktop_text": "Items (Desktop)",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnDesktop_toolTip": "Number of items to show on Desktop",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnDesktop_emptyText": "8",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnMobile_text": "Items (Mobile)",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnMobile_toolTip": "Number of items to show on Mobile",
+  "CMLinkable_localSettings.viewtypeConfiguration{divider:[.]?}{viewtypeName:[a-zA-Z]*}.itemsToShowOnMobile_emptyText": "4",
 
   TetrisBlock_i1: "Shape I (left)",
   TetrisBlock_i2: "Shape I (right)",
