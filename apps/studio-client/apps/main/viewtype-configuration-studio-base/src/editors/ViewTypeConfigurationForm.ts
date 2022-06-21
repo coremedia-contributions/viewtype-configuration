@@ -8,7 +8,8 @@ import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
 import ViewTypeConfiguration_properties from "../ViewTypeConfiguration_properties";
 
 interface ViewTypeConfigurationFormConfig extends Config<PropertyFieldGroup>, Partial<Pick<ViewTypeConfigurationForm,
-  "appliesTo"
+        "appliesTo" |
+        "viewtypeVE"
 >> {}
 
 class ViewTypeConfigurationForm extends PropertyFieldGroup {
@@ -31,7 +32,7 @@ class ViewTypeConfigurationForm extends PropertyFieldGroup {
   protected override afterRender() {
     super.afterRender();
 
-    this.selectedViewTypeExpression = this.bindTo.extendBy(ContentPropertyNames.PROPERTIES, "viewtype", "0");
+    this.selectedViewTypeExpression = this.viewtypeVE || this.bindTo.extendBy(ContentPropertyNames.PROPERTIES, "viewtype", "0");
     this.selectedViewTypeExpression.addChangeListener(bind(this, this.#handleViewTypeChange));
 
     // Initial load
@@ -42,6 +43,8 @@ class ViewTypeConfigurationForm extends PropertyFieldGroup {
   appliesTo: Array<String> = [];
 
   selectedViewTypeExpression: ValueExpression;
+
+  viewtypeVE: ValueExpression = null;
 
   #handleViewTypeChange() {
     const selectedViewType = this.selectedViewTypeExpression.getValue();

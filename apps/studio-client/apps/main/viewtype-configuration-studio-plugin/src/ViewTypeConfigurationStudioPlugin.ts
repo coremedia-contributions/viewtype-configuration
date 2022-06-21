@@ -3,6 +3,8 @@ import ViewTypeSelectorForm
 import ContentTypes_properties from "@coremedia/studio-client.cap-base-models/content/ContentTypes_properties";
 import AddItemsPlugin from "@coremedia/studio-client.ext.ui-components/plugins/AddItemsPlugin";
 
+import PageGridPropertyField
+  from "@coremedia/studio-client.main.bpbase-pagegrid-studio-plugin/pagegrid/PageGridPropertyField";
 import CopyResourceBundleProperties
   from "@coremedia/studio-client.main.editor-components/configuration/CopyResourceBundleProperties";
 import StudioPlugin from "@coremedia/studio-client.main.editor-components/configuration/StudioPlugin";
@@ -13,6 +15,7 @@ import resourceManager from "@jangaroo/runtime/l10n/resourceManager";
 import ViewTypeConfiguration_properties from "./ViewTypeConfiguration_properties";
 import StoriesSliderOptionsForm from "./configuration/StoriesSliderOptionsForm";
 import TetrisBlockOptionsForm from "./configuration/TetrisBlockOptionsForm";
+import GetSurroundingContainerPlugin from "./plugins/GetSurroundingContainerPlugin";
 
 interface ViewTypeConfigurationStudioPluginConfig extends Config<StudioPlugin> {
 }
@@ -33,6 +36,11 @@ class ViewTypeConfigurationStudioPlugin extends StudioPlugin {
                   Config(TetrisBlockOptionsForm),
                 ],
               }),
+            ],
+          }),
+          Config(PageGridPropertyField, {
+            plugins: [
+              Config(GetSurroundingContainerPlugin),
             ],
           }),
         ],
