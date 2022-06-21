@@ -10,6 +10,7 @@ import TetrisBlockOptionsForm from "../configuration/TetrisBlockOptionsForm";
 
 interface ExtendedToolbarDesignIconButtonConfig extends Config<IconButton>, Partial<Pick<ExtendedToolbarDesignIconButton,
         "bindTo" |
+        "sectionName" |
         "viewtypeVE"
         >> {
 }
@@ -33,6 +34,7 @@ class ExtendedToolbarDesignIconButton extends IconButton {
         defaults: {
           bindTo: config.bindTo,
           viewtypeVE: config.viewtypeVE,
+          pathSuffix: config.sectionName,
         },
       }),
     }), config)
@@ -42,6 +44,8 @@ class ExtendedToolbarDesignIconButton extends IconButton {
   bindTo: ValueExpression = null;
 
   viewtypeVE: ValueExpression = null;
+
+  sectionName: string = null;
 
 }
 

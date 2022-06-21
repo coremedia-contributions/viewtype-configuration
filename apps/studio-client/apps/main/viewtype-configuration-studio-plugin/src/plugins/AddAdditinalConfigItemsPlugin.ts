@@ -30,7 +30,7 @@ class AddAdditinalConfigItemsPlugin extends AddItemsPlugin {
         Config(Separator),
         Config(ExtendedToolbarDesignIconButton, {
           bindTo: config.bindTo,
-          //propertyName: [ config.propertyName, "additionalConfiguration", componentConfig.section.getName()].join("."),
+          sectionName: componentConfig.section.getName(),
           viewtypeVE: LinkListUtil.createLinkValueExpression(config.bindTo, [PageGridUtil.getPlacementPropertyPath("placement", componentConfig.section), PageGridConstants.VIEWTYPE_PROPERTY_NAME].join("."), "CMViewtype"),
         }),
       ],
