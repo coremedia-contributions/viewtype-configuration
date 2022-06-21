@@ -8,7 +8,6 @@ import PlacementLinkListPropertyField
   from "@coremedia/studio-client.main.bpbase-pagegrid-studio-plugin/pagegrid/PlacementLinkListPropertyField";
 import LinkListUtil from "@coremedia/studio-client.main.editor-components/sdk/util/LinkListUtil";
 import Component from "@jangaroo/ext-ts/Component";
-import Separator from "@jangaroo/ext-ts/toolbar/Separator";
 import { cast } from "@jangaroo/runtime";
 import Config from "@jangaroo/runtime/Config";
 import ConfigUtils from "@jangaroo/runtime/ConfigUtils";
@@ -28,7 +27,6 @@ class AddAdditionalConfigItemsPlugin extends AddItemsPlugin {
     const componentConfig: PlacementLinkListPropertyField = cast(PlacementLinkListPropertyField, config.cmp);
     super(ConfigUtils.apply(Config(AddAdditionalConfigItemsPlugin, {
       items: [
-        Config(Separator),
         Config(ExtendedToolbarDesignIconButton, {
           bindTo: config.bindTo,
           sectionName: componentConfig.section.getName(),
