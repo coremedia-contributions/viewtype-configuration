@@ -5,3 +5,11 @@ extend interface CMCollection{
 extend type CMCollectionImpl {
   viewtypeConfiguration: JSON @fetch(from:"@settingsAdapter.to(#root).get({'viewtypeConfiguration'})")
 }
+
+extend interface CMChannel {
+  viewtypeConfiguration: JSON
+}
+
+extend type CMChannelImpl {
+  viewtypeConfiguration: JSON @fetch(from:"@settingsAdapter.to(#root).get({'viewtypeConfiguration'})")
+}
