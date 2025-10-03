@@ -19,6 +19,7 @@ import resourceManager from "@jangaroo/runtime/l10n/resourceManager";
 import ViewTypeConfiguration_properties from "./ViewTypeConfiguration_properties";
 import StoriesSliderOptionsForm from "./configuration/StoriesSliderOptionsForm";
 import TetrisBlockOptionsForm from "./configuration/TetrisBlockOptionsForm";
+import ColumnCountOptionsForm from "./configuration/ColumnCountOptionsForm";
 
 interface ViewTypeConfigurationStudioPluginConfig extends Config<StudioPlugin> {
 }
@@ -31,6 +32,7 @@ class ViewTypeConfigurationStudioPlugin extends StudioPlugin {
       const items: Array<Config<ViewTypeConfigurationForm>> = [
         Config(StoriesSliderOptionsForm, { appliesTo: ["stories-slider"] }),
         Config(TetrisBlockOptionsForm, { appliesTo: ["tetris"] }),
+        Config(ColumnCountOptionsForm, { appliesTo: ["landscape"] }),
       ];
       return ConfigUtils.apply(Config(ViewTypeConfigurationStudioPlugin, {
 

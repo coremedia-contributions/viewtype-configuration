@@ -1,0 +1,39 @@
+.columnCount {
+  margin-bottom: 10px;
+}
+
+.columnCount .x-form-radio {
+  display: none;
+}
+
+.columnCount label:before {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #efefef;
+  display: block;
+  margin-bottom: 2px;
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+}
+
+.columnCount.x-form-cb-checked label:before {
+  background-color: #74C2F1;
+  border-color: #006CAE;
+}
+
+.columns--1 label:before {
+  background-image: url(get-resource-path("img/columns-1.svg"));
+}
+.columns--2 label:before {
+  background-image: url(get-resource-path("img/columns-2.svg"));
+}
+.columns--3 label:before {
+  background-image: url(get-resource-path("img/columns-3.svg"));
+}
+.columns--4 label:before {
+  background-image: url(get-resource-path("img/columns-4.svg"));
+}
+
