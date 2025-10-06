@@ -32,7 +32,7 @@ class ViewTypeConfigurationStudioPlugin extends StudioPlugin {
       const items: Array<Config<ViewTypeConfigurationForm>> = [
         Config(StoriesSliderOptionsForm, { appliesTo: ["stories-slider"] }),
         Config(TetrisBlockOptionsForm, { appliesTo: ["tetris"] }),
-        Config(ColumnCountOptionsForm, { appliesTo: ["landscape"] }),
+        Config(ColumnCountOptionsForm, { appliesTo: ["landscape", "portrait", "square"] }),
       ];
       return ConfigUtils.apply(Config(ViewTypeConfigurationStudioPlugin, {
 
