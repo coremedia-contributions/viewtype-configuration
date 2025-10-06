@@ -23,7 +23,7 @@ class ColumnCountOptionsForm extends ViewTypeConfigurationForm {
       items: [
         Config(BoundRadioGroup, {
           fieldLabel: "Column Count",
-          hideLabel: false,
+          hideLabel: true,
           flex: 1,
           itemId: "columnCountOptions",
           bindTo: config.bindTo.extendBy(ContentPropertyNames.PROPERTIES).extendBy(ViewTypeConfigurationForm.calculatePath("columnCount", config.pathSuffix)),
@@ -39,22 +39,22 @@ class ColumnCountOptionsForm extends ViewTypeConfigurationForm {
           items: [
             Config(StatefulRadio, {
               inputValue: "1",
-              boxLabel: "1 Column",
+              boxLabel: ViewTypeConfiguration_properties.ColumnCoun_1,
               cls: "columnCount columns--1",
             }),
             Config(StatefulRadio, {
               inputValue: "2",
-              boxLabel: "2 Columns",
+              boxLabel: ViewTypeConfiguration_properties.ColumnCoun_2,
               cls: "columnCount columns--2",
             }),
             Config(StatefulRadio, {
               inputValue: "3",
-              boxLabel: "3 Columns",
+              boxLabel: ViewTypeConfiguration_properties.ColumnCoun_3,
               cls: "columnCount columns--3",
             }),
             Config(StatefulRadio, {
               inputValue: "4",
-              boxLabel: "4 Columns",
+              boxLabel: ViewTypeConfiguration_properties.ColumnCoun_4,
               cls: "columnCount columns--4",
             }),
           ],

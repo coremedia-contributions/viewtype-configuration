@@ -26,6 +26,10 @@ interface ViewTypeConfiguration_properties {
   TetrisBlock_t1: string
   TetrisBlock_t2: string
   TetrisBlock_z: string
+  ColumnCoun_1: string
+  ColumnCoun_2: string
+  ColumnCoun_3: string
+  ColumnCoun_4: string
 }
 
 /**
@@ -55,6 +59,11 @@ const ViewTypeConfiguration_properties: ViewTypeConfiguration_properties = {
   TetrisBlock_t1: "Shape T (left)",
   TetrisBlock_t2: "Shape T (right)",
   TetrisBlock_z: "Shape Z",
+  ColumnCoun_1: "1 Column",
+  ColumnCoun_2: "2 Column",
+  ColumnCoun_3: "3 Column",
+  ColumnCoun_4: "4 Column",
+
 };
 
 export default ViewTypeConfiguration_properties;
