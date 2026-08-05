@@ -53,7 +53,7 @@ class ExtendedToolbarDesignIconButton extends IconButton {
 
   constructor(config: Config<ExtendedToolbarDesignIconButton> = null) {
     super((ConfigUtils.apply(Config(ExtendedToolbarDesignIconButton, {
-      iconCls: resourceManager.getString("com.coremedia.icons.CoreIcons", "create_rule"),
+      iconCls: ViewTypeConfiguration_properties.ViewTypeConfigurationIcon,
       tooltip: ViewTypeConfiguration_properties.ViewTypeConfigurationTooltip,
       text: ViewTypeConfiguration_properties.ViewTypeConfigurationTitle,
       plugins: [
